@@ -17,10 +17,6 @@ class Country(BaseModel):
     description = models.TextField(null=True, blank=True)
 
 
-class Tours(BaseModel):
-    pass
-
-
 class StepbyStep(BaseModel):
     title = models.CharField(max_length=512, null=True, blank=True)
 
