@@ -12,13 +12,17 @@ class BaseModel(models.Model):
 
 
 class Country(BaseModel):
-    title = models.CharField(max_length=256, null=True, blank=True)
+    title_en = models.CharField(max_length=256, null=True, blank=True)
+    title_ru = models.CharField(max_length=256, null=True, blank=True)
     img = models.FileField(upload_to='country/')
-    description = models.TextField(null=True, blank=True)
+    description_en = models.TextField(null=True, blank=True)
+    description_ru = models.TextField(null=True, blank=True)
 
 
 class StepbyStep(BaseModel):
-    title = models.CharField(max_length=512, null=True, blank=True)
+    title_en = models.CharField(max_length=256, null=True, blank=True)
+    title_ru = models.CharField(max_length=256, null=True, blank=True)
+
 
 
 

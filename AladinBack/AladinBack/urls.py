@@ -19,6 +19,11 @@ from django.conf import settings
 from django.urls import path, include
 from django.conf.urls.static import static
 
+
+admin.site.site_header = 'THE EAST TRAVEL'
+admin.site.site_title = 'Административная панель'
+admin.site.index_title = 'Добро пожаловать в административную панель'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('index.urls')),
