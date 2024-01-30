@@ -1,5 +1,5 @@
 """
-URL configuration for AladinBack project.
+URL configuration for setup project.
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/5.0/topics/http/urls/
@@ -26,7 +26,7 @@ admin.site.index_title = 'Добро пожаловать в администр�
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/', include('index.urls')),
-    path('tours/', include('tours.urls'))
+    path('api/', include('apps.index.urls')),
+    path('tours/', include('apps.tours.urls'))
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
