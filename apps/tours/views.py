@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import Tours, ComesOut, Days
-from .serializers import ToursSerializer, ComesOutStepSerializer, DaysStepSerializer
+from .models import Tours, ComesOut, Days, DateTours
+from .serializers import ToursSerializer, ComesOutStepSerializer, DaysStepSerializer, DateToursSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -45,3 +45,8 @@ class TourDetailView(APIView):
         }
 
         return Response(data)
+
+
+class DateListView(generics.ListAPIView):
+    queryset = DateTours.objects.all()
+    serializer_class = DateToursSerializer

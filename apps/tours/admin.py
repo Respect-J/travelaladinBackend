@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Tours, ComesOut, Days
+from .models import Tours, ComesOut, Days, DateTours
 
 
 @admin.register(Tours)
@@ -15,4 +15,8 @@ class MyModelAdmin(admin.ModelAdmin):
 @admin.register(Days)
 class MyModelAdmin(admin.ModelAdmin):
     list_display = ('description_ru', "description_en")
-# Register your models here.
+
+
+@admin.register(DateTours)
+class MyModelAdmin(admin.ModelAdmin):
+    list_display = ('day_ru', "day_en")

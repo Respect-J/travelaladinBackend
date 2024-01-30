@@ -31,6 +31,9 @@ class ComesOut(BaseModel):
     description_en = models.TextField(null=True, blank=True)
 
 
+class DateTours(BaseModel):
+    day_en = models.CharField(max_length=256, null=True, blank=True)
+    day_ru = models.CharField(max_length=256, null=True, blank=True)
 
 
 
