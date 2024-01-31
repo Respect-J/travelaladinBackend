@@ -1,10 +1,11 @@
 from rest_framework import generics
-from .models import Tours, ComesOut, Days, DateTours
-from .serializers import ToursSerializer, ComesOutStepSerializer, DaysStepSerializer, DateToursSerializer
+from django.shortcuts import render
+from .models import Tours, ComesOut, Days, DateTours, ToursImg
+from .serializers import ToursSerializer, ComesOutStepSerializer, DaysStepSerializer, DateToursSerializer, ToursImgSerializers
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
+from django.shortcuts import get_object_or_404
 
 
 class ToursListView(generics.ListAPIView):
@@ -50,3 +51,22 @@ class TourDetailView(APIView):
 class DateListView(generics.ListAPIView):
     queryset = DateTours.objects.all()
     serializer_class = DateToursSerializer
+
+
+class TourPicsView(APIView):
+    def get(self, request, tour_id, format=None):
+        try:
+            tour = Tours.objects.get(id=tour_id)
+        except Tours.DoesNotExist:
+            return Response({"error": "Tour not found"}, status=status.HTTP_404_NOT_FOUND)
+
+        pics_info = ToursImg.objects.filter(tour=tour)
+        tour_serializer = ToursSerializer(tour)
+        pics_serializer = ToursImgSerializers(pics_info, many=True)
+
+        data = {
+            'tour_info': tour_serializer.data,
+            'pics_info': pics_serializer.data,
+        }
+
+        return Response(data)

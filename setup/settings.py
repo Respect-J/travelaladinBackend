@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-2y9bk=5j05xjbr_hym*v6a2gx@cjs-0@76g2^l11^mv9wc25s(
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+# ALLOWED_HOSTS = ["theeastcaravan.com", "theeastcaravan.back.com"]
 
 
 # Application definition
@@ -135,7 +136,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.0/topics/i18n/
 
-LANGUAGE_CODE = 'en'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'UTC'
 
@@ -158,3 +159,4 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# MEDIA_ROOT = "/home/theeastc/www/back/media"

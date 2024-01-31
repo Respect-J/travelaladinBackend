@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Tours, ComesOut, Days, DateTours
+from .models import Tours, ComesOut, Days, DateTours, ToursImg
 
 
 class ToursSerializer(serializers.ModelSerializer):
@@ -25,3 +25,9 @@ class DateToursSerializer(serializers.ModelSerializer):
         model = DateTours
         fields = '__all__'
 
+
+class ToursImgSerializers(serializers.ModelSerializer):
+
+    class Meta:
+        model = ToursImg
+        fields = '__all__'
