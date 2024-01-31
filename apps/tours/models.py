@@ -13,7 +13,7 @@ class Tours(BaseModel):
     id = models.IntegerField(primary_key=True, unique=True)
     title_en = models.CharField(max_length=256, null=True, blank=True)
     title_ru = models.CharField(max_length=256, null=True, blank=True)
-    mainimg = models.FileField(upload_to='tours/')
+    mainimg = models.FileField(upload_to='tour/')
     description_ru = models.TextField(null=True, blank=True)
     description_en = models.TextField(null=True, blank=True)
     price_for_one = models.CharField(max_length=56, null=True, blank=True)
