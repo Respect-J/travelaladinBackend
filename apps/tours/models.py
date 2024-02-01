@@ -43,7 +43,7 @@ class ToursImg(BaseModel):
 
     def save(self, *args, **kwargs):
 
-        if ToursImg.objects.filter(tour=self.tour).count() >= 10:
+        if ToursImg.objects.filter(tour=self.tour).count() >= 9:
             raise ValueError("Превышен лимит на количество фотографий для данной категории.")
         super(ToursImg, self).save(*args, **kwargs)
 
