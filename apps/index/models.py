@@ -24,5 +24,7 @@ class StepbyStep(BaseModel):
     title_ru = models.CharField(max_length=256, null=True, blank=True)
 
 
-
+class Excluded(BaseModel):
+    title_en = models.CharField(max_length=256, null=True, blank=True)
+    title_ru = models.CharField(max_length=256, null=True, blank=True)
 

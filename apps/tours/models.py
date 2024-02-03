@@ -16,8 +16,12 @@ class Tours(BaseModel):
     mainimg = models.FileField(upload_to='tour/')
     description_ru = models.TextField(null=True, blank=True)
     description_en = models.TextField(null=True, blank=True)
-    price_for_one = models.CharField(max_length=56, null=True, blank=True)
-    price_for_two = models.CharField(max_length=56, null=True, blank=True)
+    price_for_one_classic = models.CharField(max_length=56, null=True, blank=True, default=0)
+    price_for_two_classic = models.CharField(max_length=56, null=True, blank=True, default=0)
+    price_for_one_bussines = models.CharField(max_length=56, null=True, blank=True, default=0)
+    price_for_two_bussines = models.CharField(max_length=56, null=True, blank=True, default=0)
+    price_for_one_wine = models.CharField(max_length=56, null=True, blank=True, default=0)
+    price_for_two_wine = models.CharField(max_length=56, null=True, blank=True, default=0)
 
 
 class Days(BaseModel):
