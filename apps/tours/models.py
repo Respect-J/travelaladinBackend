@@ -37,6 +37,11 @@ class DateTours(BaseModel):
     day_ru = models.CharField(max_length=256, null=True, blank=True)
 
 
+class DateAUTUMNTours(BaseModel):
+    day_en = models.CharField(max_length=256, null=True, blank=True)
+    day_ru = models.CharField(max_length=256, null=True, blank=True)
+
+
 class ToursImg(BaseModel):
     tour = models.ForeignKey(Tours, on_delete=models.CASCADE)
     mainimg = models.FileField(upload_to='toursIMG/')
