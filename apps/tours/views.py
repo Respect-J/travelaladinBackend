@@ -1,11 +1,10 @@
 from rest_framework import generics
-from django.shortcuts import render
-from .models import Tours, ComesOut, Days, DateTours, ToursImg
-from .serializers import ToursSerializer, ComesOutStepSerializer, DaysStepSerializer, DateToursSerializer, ToursImgSerializers
+from .models import Tours, ComesOut, Days, DateTours, ToursImg, PriceFor
+from .serializers import ToursSerializer, ComesOutStepSerializer, DaysStepSerializer, DateToursSerializer, \
+    ToursImgSerializers, PriceForSerializer
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-from django.shortcuts import get_object_or_404
 
 
 class ToursListView(generics.ListAPIView):
@@ -51,6 +50,11 @@ class TourDetailView(APIView):
 class DateListView(generics.ListAPIView):
     queryset = DateTours.objects.all()
     serializer_class = DateToursSerializer
+
+
+class PriceListView(generics.ListAPIView):
+    queryset = PriceFor.objects.all()
+    serializer_class = PriceForSerializer
 
 
 class TourPicsView(APIView):

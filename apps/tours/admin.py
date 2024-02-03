@@ -1,10 +1,16 @@
 from django.contrib import admin
-from .models import Tours, ComesOut, Days, DateTours, ToursImg
+from .models import Tours, ComesOut, Days, DateTours, ToursImg, PriceFor
 
 
 @admin.register(Tours)
 class MyModelAdmin(admin.ModelAdmin):
     list_display = ('title_ru', "title_en")
+
+
+@admin.register(PriceFor)
+class MyModelAdmin(admin.ModelAdmin):
+    list_display = ('price_for_one_bussines', "price_for_two_bussines")
+
 
 
 @admin.register(ComesOut)
