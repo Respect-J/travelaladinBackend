@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Country, StepbyStep, Excluded
+from .models import Country, StepbyStep, Excluded, Contact
 
 
 @admin.register(Country)
@@ -15,4 +15,8 @@ class MyModelAdmin(admin.ModelAdmin):
 @admin.register(Excluded)
 class MyModelAdmin(admin.ModelAdmin):
     list_display = ('title_ru', "title_ru")
-# Register your models here.
+
+
+@admin.register(Contact)
+class MyModelAdmin(admin.ModelAdmin):
+    list_display = ('number_uz', "number_ru")

@@ -28,3 +28,7 @@ class Excluded(BaseModel):
     title_en = models.CharField(max_length=256, null=True, blank=True)
     title_ru = models.CharField(max_length=256, null=True, blank=True)
 
+
+class Contact(BaseModel):
+    number_uz = models.CharField(max_length=20, null=True, blank=True)
+    number_ru = models.CharField(max_length=20, null=True, blank=True)

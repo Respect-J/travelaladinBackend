@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Country, StepbyStep, Excluded
+from .models import Country, StepbyStep, Excluded, Contact
 
 
 class CountrySerializer(serializers.ModelSerializer):
@@ -17,4 +17,10 @@ class StepbyStepSerializer(serializers.ModelSerializer):
 class ExcludedSerializer(serializers.ModelSerializer):
     class Meta:
         model = Excluded
+        fields = '__all__'
+
+
+class ContactSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Contact
         fields = '__all__'

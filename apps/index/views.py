@@ -1,6 +1,6 @@
 from rest_framework import generics
-from .models import Country, StepbyStep, Excluded
-from .serializers import CountrySerializer, StepbyStepSerializer, ExcludedSerializer
+from .models import Country, StepbyStep, Excluded, Contact
+from .serializers import CountrySerializer, StepbyStepSerializer, ExcludedSerializer, ContactSerializer
 
 
 class CountryListView(generics.ListAPIView):
@@ -17,3 +17,8 @@ class StepbyStepListView(generics.ListAPIView):
 class ExcludedListView(generics.ListAPIView):
     queryset = Excluded.objects.all()
     serializer_class = ExcludedSerializer
+
+
+class ContactListView(generics.ListAPIView):
+    queryset = Contact.objects.all()
+    serializer_class = ContactSerializer
